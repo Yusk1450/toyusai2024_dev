@@ -36,26 +36,26 @@ void setup()
 
 void loop()
 {
-  if(mpu.getMotionInterruptStatus()) {
-    sensors_event_t a, g, temp;
-    mpu.getEvent(&a, &g, &temp);
+  sensors_event_t a, g, temp;
+  mpu.getEvent(&a, &g, &temp);
 
-    double x = a.acceleration.x;
-    double y = a.acceleration.y;
-    double z = a.acceleration.z;
-    
-    double accel = sqrt(x * x + y * y + z * z);
-    Serial.println(accel);
+  double x = a.acceleration.x;
+  double y = a.acceleration.y;
+  double z = a.acceleration.z;
+  
+  double accel = sqrt(x * x + y * y + z * z);
+  Serial.println(accel);
 
-    // if (accel > )
-    // {
-    //   Keyboard.press(KEY_SPACE);
-    //   delay(300);
-    //   Keyboard.release(KEY_SPACE);
+  if (accel > 30)
+  {
+    Keyboard.press(32);
+    delay(300);
+    Keyboard.release(32);
 
-    //   // 連続で振れないようにする
-    //   delay(2000);
-    // }
+    Serial.println("KEY_SPACE");
+
+    // 連続で振れないようにする
+    delay(2000);
   }
 
   delay(10);
