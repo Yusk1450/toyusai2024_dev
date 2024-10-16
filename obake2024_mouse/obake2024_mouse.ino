@@ -1,27 +1,37 @@
 /***************************************************
-  名前: 稲友祭2024「IT×お化け屋敷」照明
+  名前: 稲友祭2024「IT×お化け屋敷」自走マウス
 ****************************************************/
+
 #include <ArduinoJson.h>
 
 #include <HTTPClient.h>
 
-#define DEVICE_NO 1
-#define LIGHT_PIN 26
+#define MOTOR_A_PIN 25
+#define MOTOR_B_PIN 26
 
 String ssid = "4DP";
 String pwd = "4dp_1450";
 
-const IPAddress ip(10, 23, 16, 200);
+const IPAddress ip(10, 23, 16, 201);
 const IPAddress gateway(10, 23, 16, 1);
 const IPAddress subnet(255, 255, 255, 0);
 
 String url = "http://10.23.16.63:8888/WORKS/NBU/toyusai2024_dev/server/flag";
 
+enum MOTOR_ACTION {
+  MOTOR_ACTION_FORWARD,
+  MOTOR_ACTION_BACK,
+  MOTOR_ACTION_BRAKE
+};
+
+MOTOR_ACTION motor = MOTOR_ACTION_FORWARD;
+
 void setup()
 {
   Serial.begin(9600);
 
-  pinMode(LIGHT_PIN, OUTPUT);
+  pinMode(MOTOR_A_PIN, OUTPUT);
+  pinMode(MOTOR_B_PIN, OUTPUT);
 
   #ifdef ESP_PLATFORM
     WiFi.disconnect(true, true);  // disable wifi, erase ap info
@@ -63,14 +73,33 @@ void loop()
         return;
       }
 
-      bool value = doc[DEVICE_NO-1];
+      bool value = doc[1];
       Serial.println(value ? "true" : "false");
 
-      digitalWrite(LIGHT_PIN, value ? HIGH : LOW);
+      if (value)
+      {
+        if (motor == MOTOR_ACTION_FORWARD)
+        {
+          digitalWrite(MOTOR_A_PIN, HIGH);
+          digitalWrite(MOTOR_B_PIN, LOW);
+        }
+        else if (motor == MOTOR_ACTION_BACK)
+        {
+          digitalWrite(MOTOR_A_PIN, LOW);
+          digitalWrite(MOTOR_B_PIN, HIGH);
+        }
+        else if (motor == MOTOR_ACTION_BRAKE)
+        {
+          digitalWrite(MOTOR_A_PIN, LOW);
+          digitalWrite(MOTOR_B_PIN, LOW);
+        }
+      }
     }
   }
   http.end();
 
   delay(5000);
+
+
 
 }
