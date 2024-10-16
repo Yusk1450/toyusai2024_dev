@@ -79,6 +79,7 @@ $app->post('/flag', function ($req, $res, $args)
 	$data = load_flags();
 
 	$data[$params['flag_id']]['clear'] = true;
+	save_flags($data);
 
 	$result = array();
 	foreach ($data as &$item)
