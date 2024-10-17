@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		498C90CC336D76B95B5387BF /* Pods_Toyusai2024.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B994EAA6FEA0DB2291D63F /* Pods_Toyusai2024.framework */; };
+		D60AFFAC2CBFFE8200B57D09 /* GameDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60AFFAB2CBFFE8200B57D09 /* GameDirector.swift */; };
+		D60AFFAF2CC012EC00B57D09 /* BaseScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60AFFAE2CC012EC00B57D09 /* BaseScene.swift */; };
+		D60AFFB12CC013B600B57D09 /* FirstScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60AFFB02CC013B600B57D09 /* FirstScene.swift */; };
+		D61798432CC0B9EE00A5EE17 /* UIColorEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61798422CC0B9EE00A5EE17 /* UIColorEx.swift */; };
+		D61798452CC0C00600A5EE17 /* sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D61798442CC0C00600A5EE17 /* sound.mp3 */; };
+		D61798472CC0E13200A5EE17 /* MemberCardScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61798462CC0E13200A5EE17 /* MemberCardScene.swift */; };
+		D61798492CC0E38B00A5EE17 /* ClearMemberCardScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61798482CC0E38B00A5EE17 /* ClearMemberCardScene.swift */; };
+		D617984B2CC0E47000A5EE17 /* ClearCursedWebScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D617984A2CC0E47000A5EE17 /* ClearCursedWebScene.swift */; };
+		D617984D2CC0F7F300A5EE17 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D617984C2CC0F7F300A5EE17 /* FirstViewController.swift */; };
 		E6E670312CB4E57E004A8E9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E670302CB4E57E004A8E9C /* AppDelegate.swift */; };
 		E6E670332CB4E57E004A8E9C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E670322CB4E57E004A8E9C /* SceneDelegate.swift */; };
 		E6E670352CB4E57E004A8E9C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E670342CB4E57E004A8E9C /* ViewController.swift */; };
@@ -37,6 +47,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		51D397A60D9A50B54E5F59E2 /* Pods-Toyusai2024.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Toyusai2024.release.xcconfig"; path = "Target Support Files/Pods-Toyusai2024/Pods-Toyusai2024.release.xcconfig"; sourceTree = "<group>"; };
+		67B994EAA6FEA0DB2291D63F /* Pods_Toyusai2024.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Toyusai2024.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D60AFFAB2CBFFE8200B57D09 /* GameDirector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDirector.swift; sourceTree = "<group>"; };
+		D60AFFAE2CC012EC00B57D09 /* BaseScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScene.swift; sourceTree = "<group>"; };
+		D60AFFB02CC013B600B57D09 /* FirstScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScene.swift; sourceTree = "<group>"; };
+		D61798422CC0B9EE00A5EE17 /* UIColorEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorEx.swift; sourceTree = "<group>"; };
+		D61798442CC0C00600A5EE17 /* sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound.mp3; sourceTree = "<group>"; };
+		D61798462CC0E13200A5EE17 /* MemberCardScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberCardScene.swift; sourceTree = "<group>"; };
+		D61798482CC0E38B00A5EE17 /* ClearMemberCardScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearMemberCardScene.swift; sourceTree = "<group>"; };
+		D617984A2CC0E47000A5EE17 /* ClearCursedWebScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearCursedWebScene.swift; sourceTree = "<group>"; };
+		D617984C2CC0F7F300A5EE17 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		E6E6702D2CB4E57E004A8E9C /* Toyusai2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Toyusai2024.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6E670302CB4E57E004A8E9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6E670322CB4E57E004A8E9C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +72,7 @@
 		E6E670512CB4E57F004A8E9C /* ipad_screen01UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ipad_screen01UITests.swift; sourceTree = "<group>"; };
 		E6E670532CB4E57F004A8E9C /* ipad_screen01UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ipad_screen01UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E6E670642CB4E8DB004A8E9C /* 05HomuraM-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "05HomuraM-SemiBold.otf"; sourceTree = "<group>"; };
+		F728F3FB3286D2A44E529426 /* Pods-Toyusai2024.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Toyusai2024.debug.xcconfig"; path = "Target Support Files/Pods-Toyusai2024/Pods-Toyusai2024.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				498C90CC336D76B95B5387BF /* Pods_Toyusai2024.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +101,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F4A6B9747A34569A24CD86F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				67B994EAA6FEA0DB2291D63F /* Pods_Toyusai2024.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		84220D16391BAB8A8D1CA390 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F728F3FB3286D2A44E529426 /* Pods-Toyusai2024.debug.xcconfig */,
+				51D397A60D9A50B54E5F59E2 /* Pods-Toyusai2024.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D60AFFAD2CC012D800B57D09 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				D60AFFAE2CC012EC00B57D09 /* BaseScene.swift */,
+				D60AFFB02CC013B600B57D09 /* FirstScene.swift */,
+				D61798462CC0E13200A5EE17 /* MemberCardScene.swift */,
+				D61798482CC0E38B00A5EE17 /* ClearMemberCardScene.swift */,
+				D617984A2CC0E47000A5EE17 /* ClearCursedWebScene.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		D61798412CC0B9AE00A5EE17 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D61798422CC0B9EE00A5EE17 /* UIColorEx.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		E6E670242CB4E57E004A8E9C = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +145,8 @@
 				E6E670462CB4E57F004A8E9C /* Toyusai2024Tests */,
 				E6E670502CB4E57F004A8E9C /* Toyusai2024UITests */,
 				E6E6702E2CB4E57E004A8E9C /* Products */,
+				84220D16391BAB8A8D1CA390 /* Pods */,
+				0F4A6B9747A34569A24CD86F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,10 +163,15 @@
 		E6E6702F2CB4E57E004A8E9C /* Toyusai2024 */ = {
 			isa = PBXGroup;
 			children = (
+				D61798412CC0B9AE00A5EE17 /* Extensions */,
+				D60AFFAD2CC012D800B57D09 /* Scenes */,
 				E6E670642CB4E8DB004A8E9C /* 05HomuraM-SemiBold.otf */,
+				D61798442CC0C00600A5EE17 /* sound.mp3 */,
 				E6E670302CB4E57E004A8E9C /* AppDelegate.swift */,
 				E6E670322CB4E57E004A8E9C /* SceneDelegate.swift */,
+				D617984C2CC0F7F300A5EE17 /* FirstViewController.swift */,
 				E6E670342CB4E57E004A8E9C /* ViewController.swift */,
+				D60AFFAB2CBFFE8200B57D09 /* GameDirector.swift */,
 				E6E670362CB4E57E004A8E9C /* Main.storyboard */,
 				E6E670392CB4E57F004A8E9C /* Assets.xcassets */,
 				E6E6703B2CB4E57F004A8E9C /* LaunchScreen.storyboard */,
@@ -137,9 +204,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E6E670572CB4E57F004A8E9C /* Build configuration list for PBXNativeTarget "Toyusai2024" */;
 			buildPhases = (
+				22BFF4D6AC9D843A520750FF /* [CP] Check Pods Manifest.lock */,
 				E6E670292CB4E57E004A8E9C /* Sources */,
 				E6E6702A2CB4E57E004A8E9C /* Frameworks */,
 				E6E6702B2CB4E57E004A8E9C /* Resources */,
+				22AE44D3FE819C68369FC33B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -238,6 +307,7 @@
 				E6E6703D2CB4E57F004A8E9C /* Base in Resources */,
 				E6E670382CB4E57E004A8E9C /* Base in Resources */,
 				E6E670652CB4E8DB004A8E9C /* 05HomuraM-SemiBold.otf in Resources */,
+				D61798452CC0C00600A5EE17 /* sound.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,14 +327,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		22AE44D3FE819C68369FC33B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Toyusai2024/Pods-Toyusai2024-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Toyusai2024/Pods-Toyusai2024-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Toyusai2024/Pods-Toyusai2024-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		22BFF4D6AC9D843A520750FF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Toyusai2024-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E6E670292CB4E57E004A8E9C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D61798472CC0E13200A5EE17 /* MemberCardScene.swift in Sources */,
+				D61798432CC0B9EE00A5EE17 /* UIColorEx.swift in Sources */,
 				E6E670352CB4E57E004A8E9C /* ViewController.swift in Sources */,
+				D60AFFB12CC013B600B57D09 /* FirstScene.swift in Sources */,
+				D60AFFAC2CBFFE8200B57D09 /* GameDirector.swift in Sources */,
 				E6E670312CB4E57E004A8E9C /* AppDelegate.swift in Sources */,
 				E6E670332CB4E57E004A8E9C /* SceneDelegate.swift in Sources */,
+				D617984B2CC0E47000A5EE17 /* ClearCursedWebScene.swift in Sources */,
+				D60AFFAF2CC012EC00B57D09 /* BaseScene.swift in Sources */,
+				D61798492CC0E38B00A5EE17 /* ClearMemberCardScene.swift in Sources */,
+				D617984D2CC0F7F300A5EE17 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,12 +561,14 @@
 		};
 		E6E670582CB4E57F004A8E9C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F728F3FB3286D2A44E529426 /* Pods-Toyusai2024.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = MT2JN72543;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Toyusai2024/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -459,7 +581,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "jp.or.bunri..ipad-screen01";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.ac.nagoya-bunri.";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -469,12 +591,14 @@
 		};
 		E6E670592CB4E57F004A8E9C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 51D397A60D9A50B54E5F59E2 /* Pods-Toyusai2024.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = MT2JN72543;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Toyusai2024/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -487,7 +611,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "jp.or.bunri..ipad-screen01";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.ac.nagoya-bunri.";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
