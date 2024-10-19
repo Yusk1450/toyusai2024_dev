@@ -139,8 +139,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 	
 	func gameDirectorDidUpdate(gameDirector: GameDirector)
 	{
-		updateTimeLabel(time: gameDirector.remainGameTime)
+		if (gameDirector.remainGameTime < 0)
+		{
+			var topController:UIViewController = self
+			while let presentedViewController = topController.presentedViewController {
+				topController = presentedViewController
+			}
+			topController.dismiss(animated: true, completion: nil)
+			
+			self.performSegue(withIdentifier: "toEnd", sender: nil)
+			return
+		}
 		
+		updateTimeLabel(time: gameDirector.remainGameTime)
 		
 		if (gameDirector.gimmickFlags[3])
 		{
