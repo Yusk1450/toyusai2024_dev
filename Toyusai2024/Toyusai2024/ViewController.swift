@@ -13,24 +13,25 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 	var items = [String]()
 	
 	var gimmickIdxOld = 0
-  
-    @IBOutlet weak var labelW: UILabel!
-    @IBOutlet weak var labelB: UILabel!
-    @IBOutlet weak var labelR: UILabel!
-    
-    @IBOutlet weak var input: UITextField!
-    @IBOutlet weak var upbox: UIImageView!
-    @IBOutlet weak var leftbox: UIImageView!
-    @IBOutlet weak var downbox1: UIImageView!
-    @IBOutlet weak var downbox2: UIImageView!
-    
+	
+	@IBOutlet weak var labelW: UILabel!
+	@IBOutlet weak var labelB: UILabel!
+	@IBOutlet weak var labelR: UILabel!
+	
+	@IBOutlet weak var input: UITextField!
+	@IBOutlet weak var upbox: UIImageView!
+	@IBOutlet weak var leftbox: UIImageView!
+	@IBOutlet weak var downbox1: UIImageView!
+	@IBOutlet weak var downbox2: UIImageView!
+	
 	@IBOutlet weak var tableView: UITableView!
 	
 	var boxViews = [UIImageView]()
-
+	var animationBoxIndex = 0
+	
 	var audioPlayer:AVAudioPlayer?
 	
-    override func viewDidLoad()
+	override func viewDidLoad()
 	{
 		super.viewDidLoad()
 		
@@ -45,14 +46,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 		self.labelW.attributedText = attributedString
 		self.labelR.attributedText = attributedString
 		self.labelB.attributedText = attributedString
-
+		
 		self.labelW.textColor = UIColor.rgba(red: 255, green: 255, blue: 255, alpha: 1.0)
 		self.labelW.font = UIFont(name: "05HomuraM-SemiBold", size: 55)
 		self.labelR.textColor = UIColor.rgba(red: 161, green: 0, blue: 0, alpha: 0.6)
 		self.labelR.font = UIFont(name: "05HomuraM-SemiBold", size: 55)
 		self.labelB.textColor = UIColor.rgba(red: 21, green: 169, blue: 233, alpha: 0.5)
 		self.labelB.font = UIFont(name: "05HomuraM-SemiBold", size: 55)
-
+		
 		updateTimeLabel(time: GameDirector.shared.remainGameTime)
 		
 		//背景カラー
@@ -71,7 +72,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 		self.audioPlayer = try? AVAudioPlayer(contentsOf: url)
 		self.audioPlayer?.prepareToPlay()
 		
-		self.boxViews = [self.downbox2, self.downbox1, self.leftbox, self.upbox]
+		self.boxViews = [self.downbox2, self.leftbox, self.upbox]
 		
 		director.currentViewController = self
 		
@@ -86,48 +87,48 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 		
 		self.startAnimation(boxView: self.boxViews[0])
 	}
-		
+	
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
 	{
 		return 84.0
 	}
-    
-    func numberOfSections(in tableView: UITableView) -> Int 
-    {
-        //セクション１、返す
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int 
-    {
-        //テーブルビューの中身
-        return self.items.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell 
-    {
-        //セルの名前
-        let identifier = "SnsCell"
-        //セルの再利用
-        var cell = tableView.dequeueReusableCell(withIdentifier: identifier)
-        
-        if (cell == nil)
-        {
-            //再利用されなかった時新しく作ってる
-            cell = UITableViewCell(style: .default, reuseIdentifier: identifier)
-        }
-
+	
+	func numberOfSections(in tableView: UITableView) -> Int
+	{
+		//セクション１、返す
+		return 1
+	}
+	
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+	{
+		//テーブルビューの中身
+		return self.items.count
+	}
+	
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+	{
+		//セルの名前
+		let identifier = "SnsCell"
+		//セルの再利用
+		var cell = tableView.dequeueReusableCell(withIdentifier: identifier)
+		
+		if (cell == nil)
+		{
+			//再利用されなかった時新しく作ってる
+			cell = UITableViewCell(style: .default, reuseIdentifier: identifier)
+		}
+		
 		let userLabel = cell?.viewWithTag(95) as? UILabel
 		userLabel?.font = UIFont(name: "05HomuraM-SemiBold", size: 10)
-
+		
 		//何番目が選択されてる？
 		let label = cell?.viewWithTag(100) as? UILabel
 		label?.font = UIFont(name: "05HomuraM-SemiBold", size: 12)
 		label?.text = self.items[indexPath.row]
-        
-        return cell!
-    }
-    
+		
+		return cell!
+	}
+	
 	func gameDirectorDidChangeNextScript(gameDirector: GameDirector, script: String)
 	{
 		self.audioPlayer?.play()
@@ -138,9 +139,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 	
 	func gameDirectorDidUpdate(gameDirector: GameDirector)
 	{
-		updateTimeLabel(time: GameDirector.shared.remainGameTime)
+		updateTimeLabel(time: gameDirector.remainGameTime)
 		
 		
+		if (gameDirector.gimmickFlags[3])
+		{
+			self.stopAnimation()
+		}
+		else if (gameDirector.gimmickFlags[2] && self.animationBoxIndex == 1)
+		{
+			self.animationBoxIndex = 2
+			startAnimation(boxView: self.boxViews[2])
+		}
+		else if (gameDirector.gimmickFlags[0] && self.animationBoxIndex == 0)
+		{
+			self.animationBoxIndex = 1
+			startAnimation(boxView: self.boxViews[1])
+		}
 		
 	}
 	
@@ -150,41 +165,51 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 		let paddedSeconds = String(format: "%02d", time % 60)
 		
 		let formattedTime = "\(paddedMinutes):\(paddedSeconds)"
-
+		
 		self.labelW.text = formattedTime
 		self.labelR.text = formattedTime
 		self.labelB.text = formattedTime
 	}
-    
-    @objc func keyboardWillShowNotification(notification:NSNotification)
+	
+	@objc func keyboardWillShowNotification(notification:NSNotification)
 	{
 		guard let userInfo = notification.userInfo else { return }
 		guard let isLocalUserInfoKey = userInfo[UIResponder.keyboardIsLocalUserInfoKey] as? NSNumber else { return }
-
+		
 		if (!isLocalUserInfoKey.boolValue) { return }
-
+		
 		let transform = CGAffineTransform(translationX: 0, y: -200)
 		self.view.transform = transform
 	}
-
+	
 	@objc func keyboardWillHideNotification(notification:NSNotification)
 	{
 		guard let userInfo = notification.userInfo else { return }
 		guard let isLocalUserInfoKey = userInfo[UIResponder.keyboardIsLocalUserInfoKey] as? NSNumber else { return }
-
+		
 		if (!isLocalUserInfoKey.boolValue) { return }
-
+		
 		self.view.transform = CGAffineTransform.identity
 	}
-
+	
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool
 	{
 		textField.resignFirstResponder()
 		return true
 	}
-    
+	
+	private func stopAnimation()
+	{
+		for v in self.boxViews
+		{
+			v.layer.removeAllAnimations()
+		}
+	}
+	
 	private func startAnimation(boxView:UIView)
 	{
+		self.stopAnimation()
+		
 		boxView.alpha = 1.0
 		
 	   // 2秒かけて透明にし、完了したら2秒かけて元に戻す。

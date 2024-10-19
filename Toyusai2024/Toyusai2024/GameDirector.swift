@@ -168,22 +168,4 @@ class GameDirector: NSObject, GameSceneDelegate
 		}
 	}
 	
-	/* ----------------------------------------------------
-	 * ギミック番号を取得する
-	 ----------------------------------------------------*/
-	func getGimmickIndex() -> Int
-	{
-		var gimmickIdx = 0
-		for i in stride(from: 0, to: self.gimmickFlags.count, by: 1)
-		{
-			if (!self.gimmickFlags[i])
-			{
-				break
-			}
-			gimmickIdx = i
-		}
-		
-		return gimmickIdx
-	}
-	
 }

@@ -211,10 +211,6 @@ Cg
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="aSM-eE-ljI"/>
                                 </connections>
                             </tableView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" fixedFrame="YES" image="downbox" translatesAutoresizingMaskIntoConstraints="NO" id="qpY-EO-bjG">
-                                <rect key="frame" x="177" y="632" width="133" height="67"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="downbox" translatesAutoresizingMaskIntoConstraints="NO" id="Hg5-Ag-q8u">
                                 <rect key="frame" x="320" y="632" width="133" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -238,7 +234,6 @@ Cg
                         <color key="backgroundColor" red="0.1764705882352941" green="0.1764705882352941" blue="0.19215686274509802" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
-                        <outlet property="downbox1" destination="qpY-EO-bjG" id="vYQ-nL-pfG"/>
                         <outlet property="downbox2" destination="Hg5-Ag-q8u" id="vDs-jJ-gGr"/>
                         <outlet property="input" destination="Zzf-fU-gZW" id="WmO-7s-jzS"/>
                         <outlet property="labelB" destination="qUA-z3-jy2" id="7uk-RH-Qba"/>

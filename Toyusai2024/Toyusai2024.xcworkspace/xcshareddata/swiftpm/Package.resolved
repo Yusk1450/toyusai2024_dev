@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/sammysmallman/CoreOSC.git",
       "state" : {
-        "revision" : "20581ab989c36617ffee528d0e2b24b14141d31b",
-        "version" : "2.0.0"
+        "revision" : "887328eb34c406405fc24988a81d49ac457fb2f8",
+        "version" : "1.3.1"
       }
     },
     {
@@ -24,8 +24,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/SammySmallman/OSCKit",
       "state" : {
-        "revision" : "85279d6703930b59d2e87a77636b26ed41c507f8",
-        "version" : "4.0.0"
+        "revision" : "f5982778ddfe573d82d9a1137dbfea17bb52989b",
+        "version" : "3.1.0"
       }
     },
     {

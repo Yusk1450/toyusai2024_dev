@@ -19,6 +19,7 @@
 		D617984B2CC0E47000A5EE17 /* ClearBuggyGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D617984A2CC0E47000A5EE17 /* ClearBuggyGameScene.swift */; };
 		D617984D2CC0F7F300A5EE17 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D617984C2CC0F7F300A5EE17 /* FirstViewController.swift */; };
 		D6B545F52CC36FCE00ACDFAD /* ClearGlassScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B545F42CC36FCE00ACDFAD /* ClearGlassScene.swift */; };
+		D6B545FB2CC3B11000ACDFAD /* OSCKit in Frameworks */ = {isa = PBXBuildFile; productRef = D6B545FA2CC3B11000ACDFAD /* OSCKit */; };
 		E6E670312CB4E57E004A8E9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E670302CB4E57E004A8E9C /* AppDelegate.swift */; };
 		E6E670332CB4E57E004A8E9C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E670322CB4E57E004A8E9C /* SceneDelegate.swift */; };
 		E6E670352CB4E57E004A8E9C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E670342CB4E57E004A8E9C /* ViewController.swift */; };
@@ -85,6 +86,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				498C90CC336D76B95B5387BF /* Pods_Toyusai2024.framework in Frameworks */,
+				D6B545FB2CC3B11000ACDFAD /* OSCKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +223,9 @@
 			dependencies = (
 			);
 			name = Toyusai2024;
+			packageProductDependencies = (
+				D6B545FA2CC3B11000ACDFAD /* OSCKit */,
+			);
 			productName = "ipad screen01";
 			productReference = E6E6702D2CB4E57E004A8E9C /* Toyusai2024.app */;
 			productType = "com.apple.product-type.application";
@@ -750,11 +755,19 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SammySmallman/OSCKit";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.0.0;
+				kind = exactVersion;
+				version = 3.1.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D6B545FA2CC3B11000ACDFAD /* OSCKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D6B545F32CC32D1000ACDFAD /* XCRemoteSwiftPackageReference "OSCKit" */;
+			productName = OSCKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E6E670252CB4E57E004A8E9C /* Project object */;
 }

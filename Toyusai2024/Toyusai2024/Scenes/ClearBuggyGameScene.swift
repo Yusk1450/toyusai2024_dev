@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import OSCKit
 
 class ClearBuggyGameScene: BaseScene
 {
@@ -16,6 +17,26 @@ class ClearBuggyGameScene: BaseScene
 		self.scenario = [
 			"まだできない、どれだけ頑張ってもバグが出てくる"
 		]
+	}
+	
+	override func start(viewController: UIViewController?)
+	{
+		super.start(viewController: viewController)
+		
+		let client = OSCUdpClient(host: "192.168.0.115", port: 55555)
+		if let message = try? OSCMessage(with: "/start_movie", arguments: [])
+		{
+			if let _ = try? client.send(message)
+			{
+			}
+		}
+		
+		
+		Timer.scheduledTimer(withTimeInterval: 25.0, repeats: false) { timer in
+			
+			GameDirector.shared.sendFlagToServer(flagIndex: 2)
+			
+		}
 	}
 	
 	override func update(viewController: UIViewController?)
