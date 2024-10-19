@@ -1,18 +1,13 @@
 [
     {
-        "comment": "ゲームスタート",
+        "comment": "消えた学生証",
         "name": "missing_card",
-        "clear": false
-    },
-    {
-        "comment": "呪われたWebサイト",
-        "name": "cursed_web_site",
-        "clear": false
+        "clear": true
     },
     {
         "comment": "バグだらけのゲーム",
         "name": "buggy_game",
-        "clear": false
+        "clear": true
     },
     {
         "comment": "すりガラス越しの主幹",
@@ -22,11 +17,6 @@
     {
         "comment": "未完成なポスター",
         "name": "unfinished_poster",
-        "clear": false
-    },
-    {
-        "comment": "ゲームクリア",
-        "name": "game_clear",
         "clear": false
     }
 ]
