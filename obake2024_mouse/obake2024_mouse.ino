@@ -9,14 +9,14 @@
 #define MOTOR_A_PIN 25
 #define MOTOR_B_PIN 26
 
-String ssid = "4DP";
-String pwd = "4dp_1450";
+String ssid = "hopter_wifi";
+String pwd = "hopter_1450";
 
-const IPAddress ip(10, 23, 16, 201);
-const IPAddress gateway(10, 23, 16, 1);
+const IPAddress ip(192, 168, 0, 203);
+const IPAddress gateway(192, 168, 0, 1);
 const IPAddress subnet(255, 255, 255, 0);
 
-String url = "http://10.23.16.63:8888/WORKS/NBU/toyusai2024_dev/server/flag";
+String url = "http://192.168.0.115:8888/WORKS/NBU/toyusai2024_dev/server/flag";
 
 enum MOTOR_ACTION {
   MOTOR_ACTION_FORWARD,
@@ -24,7 +24,7 @@ enum MOTOR_ACTION {
   MOTOR_ACTION_BRAKE
 };
 
-MOTOR_ACTION motor = MOTOR_ACTION_FORWARD;
+MOTOR_ACTION motor = MOTOR_ACTION_BACK;
 
 void setup()
 {
@@ -78,21 +78,10 @@ void loop()
 
       if (value)
       {
-        if (motor == MOTOR_ACTION_FORWARD)
-        {
-          digitalWrite(MOTOR_A_PIN, HIGH);
-          digitalWrite(MOTOR_B_PIN, LOW);
-        }
-        else if (motor == MOTOR_ACTION_BACK)
-        {
-          digitalWrite(MOTOR_A_PIN, LOW);
-          digitalWrite(MOTOR_B_PIN, HIGH);
-        }
-        else if (motor == MOTOR_ACTION_BRAKE)
-        {
-          digitalWrite(MOTOR_A_PIN, LOW);
-          digitalWrite(MOTOR_B_PIN, LOW);
-        }
+        driveMotor();
+        delay(5000);
+        motor = MOTOR_ACTION_BRAKE;
+        driveMotor();
       }
     }
   }
@@ -100,6 +89,23 @@ void loop()
 
   delay(5000);
 
+}
 
-
+void driveMotor()
+{
+  if (motor == MOTOR_ACTION_FORWARD)
+  {
+    digitalWrite(MOTOR_A_PIN, HIGH);
+    digitalWrite(MOTOR_B_PIN, LOW);
+  }
+  else if (motor == MOTOR_ACTION_BACK)
+  {
+    digitalWrite(MOTOR_A_PIN, LOW);
+    digitalWrite(MOTOR_B_PIN, HIGH);
+  }
+  else if (motor == MOTOR_ACTION_BRAKE)
+  {
+    digitalWrite(MOTOR_A_PIN, LOW);
+    digitalWrite(MOTOR_B_PIN, LOW);
+  }
 }

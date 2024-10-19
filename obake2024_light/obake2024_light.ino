@@ -5,17 +5,17 @@
 
 #include <HTTPClient.h>
 
-#define DEVICE_NO 1
+#define DEVICE_NO 3
 #define LIGHT_PIN 26
 
-String ssid = "4DP";
-String pwd = "4dp_1450";
+String ssid = "hopter_wifi";
+String pwd = "hopter_1450";
 
-const IPAddress ip(10, 23, 16, 200);
-const IPAddress gateway(10, 23, 16, 1);
+const IPAddress ip(192, 168, 0, 202);
+const IPAddress gateway(192, 168, 0, 1);
 const IPAddress subnet(255, 255, 255, 0);
 
-String url = "http://10.23.16.63:8888/WORKS/NBU/toyusai2024_dev/server/flag";
+String url = "http://192.168.0.115:8888/WORKS/NBU/toyusai2024_dev/server/flag";
 
 void setup()
 {
@@ -62,15 +62,47 @@ void loop()
         Serial.println("JSON Parse error");
         return;
       }
+      if (DEVICE_NO == 1)
+      {
+        bool value = doc[0];
+        digitalWrite(LIGHT_PIN, value ? LOW : HIGH);
+      }
+      else if (DEVICE_NO == 2)
+      {
+        bool value0 = doc[0];
+        bool value1 = doc[1];
 
-      bool value = doc[DEVICE_NO-1];
-      Serial.println(value ? "true" : "false");
+        if (value0 && !value1)
+        {
+          digitalWrite(LIGHT_PIN, HIGH);
+          Serial.println("HIGH");
+        }
+        else
+        {
+          digitalWrite(LIGHT_PIN, LOW);
+          Serial.println("LOW");
+        }
+      }
+      else if (DEVICE_NO == 3)
+      {
+        bool value0 = doc[2];
+        bool value1 = doc[3];
 
-      digitalWrite(LIGHT_PIN, value ? HIGH : LOW);
+        if (value0 && !value1)
+        {
+          digitalWrite(LIGHT_PIN, HIGH);
+          Serial.println("HIGH");
+        }
+        else
+        {
+          digitalWrite(LIGHT_PIN, LOW);
+          Serial.println("LOW");
+        }
+      }
+      
     }
   }
   http.end();
 
-  delay(5000);
-
+  delay(1000);
 }
