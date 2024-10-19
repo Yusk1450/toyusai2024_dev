@@ -24,7 +24,7 @@ enum MOTOR_ACTION {
   MOTOR_ACTION_BRAKE
 };
 
-MOTOR_ACTION motor = MOTOR_ACTION_BACK;
+MOTOR_ACTION motor = MOTOR_ACTION_FORWARD;
 
 void setup()
 {
@@ -73,7 +73,7 @@ void loop()
         return;
       }
 
-      bool value = doc[1];
+      bool value = doc[0];
       Serial.println(value ? "true" : "false");
 
       if (value)
