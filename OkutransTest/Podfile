@@ -1,0 +1,7 @@
+platform :ios, '16.4'
+use_frameworks!
+
+target 'OkutransTest' do
+	pod 'Alamofire'
+	pod 'SwiftyJSON'
+end
