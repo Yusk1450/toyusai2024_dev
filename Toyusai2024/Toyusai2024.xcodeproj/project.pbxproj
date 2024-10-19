@@ -16,8 +16,9 @@
 		D61798452CC0C00600A5EE17 /* sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D61798442CC0C00600A5EE17 /* sound.mp3 */; };
 		D61798472CC0E13200A5EE17 /* MemberCardScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61798462CC0E13200A5EE17 /* MemberCardScene.swift */; };
 		D61798492CC0E38B00A5EE17 /* ClearMemberCardScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61798482CC0E38B00A5EE17 /* ClearMemberCardScene.swift */; };
-		D617984B2CC0E47000A5EE17 /* ClearCursedWebScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D617984A2CC0E47000A5EE17 /* ClearCursedWebScene.swift */; };
+		D617984B2CC0E47000A5EE17 /* ClearBuggyGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D617984A2CC0E47000A5EE17 /* ClearBuggyGameScene.swift */; };
 		D617984D2CC0F7F300A5EE17 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D617984C2CC0F7F300A5EE17 /* FirstViewController.swift */; };
+		D6B545F52CC36FCE00ACDFAD /* ClearGlassScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B545F42CC36FCE00ACDFAD /* ClearGlassScene.swift */; };
 		E6E670312CB4E57E004A8E9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E670302CB4E57E004A8E9C /* AppDelegate.swift */; };
 		E6E670332CB4E57E004A8E9C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E670322CB4E57E004A8E9C /* SceneDelegate.swift */; };
 		E6E670352CB4E57E004A8E9C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E670342CB4E57E004A8E9C /* ViewController.swift */; };
@@ -58,8 +59,9 @@
 		D61798442CC0C00600A5EE17 /* sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound.mp3; sourceTree = "<group>"; };
 		D61798462CC0E13200A5EE17 /* MemberCardScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberCardScene.swift; sourceTree = "<group>"; };
 		D61798482CC0E38B00A5EE17 /* ClearMemberCardScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearMemberCardScene.swift; sourceTree = "<group>"; };
-		D617984A2CC0E47000A5EE17 /* ClearCursedWebScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearCursedWebScene.swift; sourceTree = "<group>"; };
+		D617984A2CC0E47000A5EE17 /* ClearBuggyGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearBuggyGameScene.swift; sourceTree = "<group>"; };
 		D617984C2CC0F7F300A5EE17 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		D6B545F42CC36FCE00ACDFAD /* ClearGlassScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearGlassScene.swift; sourceTree = "<group>"; };
 		E6E6702D2CB4E57E004A8E9C /* Toyusai2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Toyusai2024.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6E670302CB4E57E004A8E9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6E670322CB4E57E004A8E9C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,7 +129,8 @@
 				D60AFFB02CC013B600B57D09 /* FirstScene.swift */,
 				D61798462CC0E13200A5EE17 /* MemberCardScene.swift */,
 				D61798482CC0E38B00A5EE17 /* ClearMemberCardScene.swift */,
-				D617984A2CC0E47000A5EE17 /* ClearCursedWebScene.swift */,
+				D617984A2CC0E47000A5EE17 /* ClearBuggyGameScene.swift */,
+				D6B545F42CC36FCE00ACDFAD /* ClearGlassScene.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -172,9 +175,9 @@
 				E6E670302CB4E57E004A8E9C /* AppDelegate.swift */,
 				E6E670322CB4E57E004A8E9C /* SceneDelegate.swift */,
 				D617984C2CC0F7F300A5EE17 /* FirstViewController.swift */,
+				CE3E61812CC20E450025AEF2 /* ARViewController.swift */,
 				E6E670342CB4E57E004A8E9C /* ViewController.swift */,
 				D60AFFAB2CBFFE8200B57D09 /* GameDirector.swift */,
-				CE3E61812CC20E450025AEF2 /* ARViewController.swift */,
 				E6E670362CB4E57E004A8E9C /* Main.storyboard */,
 				E6E670392CB4E57F004A8E9C /* Assets.xcassets */,
 				E6E6703B2CB4E57F004A8E9C /* LaunchScreen.storyboard */,
@@ -290,6 +293,9 @@
 				Base,
 			);
 			mainGroup = E6E670242CB4E57E004A8E9C;
+			packageReferences = (
+				D6B545F32CC32D1000ACDFAD /* XCRemoteSwiftPackageReference "OSCKit" */,
+			);
 			productRefGroup = E6E6702E2CB4E57E004A8E9C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -385,7 +391,8 @@
 				D60AFFAC2CBFFE8200B57D09 /* GameDirector.swift in Sources */,
 				E6E670312CB4E57E004A8E9C /* AppDelegate.swift in Sources */,
 				E6E670332CB4E57E004A8E9C /* SceneDelegate.swift in Sources */,
-				D617984B2CC0E47000A5EE17 /* ClearCursedWebScene.swift in Sources */,
+				D6B545F52CC36FCE00ACDFAD /* ClearGlassScene.swift in Sources */,
+				D617984B2CC0E47000A5EE17 /* ClearBuggyGameScene.swift in Sources */,
 				D60AFFAF2CC012EC00B57D09 /* BaseScene.swift in Sources */,
 				D61798492CC0E38B00A5EE17 /* ClearMemberCardScene.swift in Sources */,
 				D617984D2CC0F7F300A5EE17 /* FirstViewController.swift in Sources */,
@@ -580,13 +587,13 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationLandscapeRight;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "jp.ac.nagoya-bunri.";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.ac.nagoya-bunri.toyusai2024";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -611,13 +618,13 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationLandscapeRight;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "jp.ac.nagoya-bunri.";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.ac.nagoya-bunri.toyusai2024";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -737,6 +744,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D6B545F32CC32D1000ACDFAD /* XCRemoteSwiftPackageReference "OSCKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SammySmallman/OSCKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = E6E670252CB4E57E004A8E9C /* Project object */;
 }

@@ -9,59 +9,80 @@ import UIKit
 import ARKit
 import SceneKit
 
-class ARViewController: UIViewController, ARSCNViewDelegate {
-
+class ARViewController: UIViewController, ARSCNViewDelegate
+{
     @IBOutlet var sceneView: ARSCNView!
+	
+	var isDetected = false
     
-    override func viewDidLoad() {
-            super.viewDidLoad()
-            
-            // Set the view's delegate
-            sceneView.delegate = self
-            
-            // Show statistics such as fps and timing information
-            sceneView.showsStatistics = true
-        }
+    override func viewDidLoad()
+	{
+		super.viewDidLoad()
+		
+		sceneView.delegate = self
+//		sceneView.showsStatistics = true
+	}
 
-        override func viewWillAppear(_ animated: Bool) {
-            super.viewWillAppear(animated)
+	override func viewWillAppear(_ animated: Bool)
+	{
+		super.viewWillAppear(animated)
 
-            // Create a session configuration
-            let configuration = ARImageTrackingConfiguration()
+		let configuration = ARImageTrackingConfiguration()
+		if let referenceImages = ARReferenceImage.referenceImages(inGroupNamed: "ARResources", bundle: Bundle.main) {
+			configuration.trackingImages = referenceImages
+			configuration.maximumNumberOfTrackedImages = 1
+		}
+		sceneView.session.run(configuration)
+	}
 
-            // Load ARReferenceImages from Assets
-            if let referenceImages = ARReferenceImage.referenceImages(inGroupNamed: "ARResources", bundle: Bundle.main) {
-                configuration.trackingImages = referenceImages
-                configuration.maximumNumberOfTrackedImages = 1
-            }
+	override func viewWillDisappear(_ animated: Bool)
+	{
+		super.viewWillDisappear(animated)
 
-            // Run the view's session
-            sceneView.session.run(configuration)
-        }
+		sceneView.session.pause()
+	}
 
-        override func viewWillDisappear(_ animated: Bool) {
-            super.viewWillDisappear(animated)
+	// MARK: - ARSCNViewDelegate
+	func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor)
+	{
+		guard let imageAnchor = anchor as? ARImageAnchor else { return }
 
-            // Pause the view's session
-            sceneView.session.pause()
-        }
+		let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width,
+							 height: imageAnchor.referenceImage.physicalSize.height)
+		
+		// 任意の画像を設定 (例: "display_image.png")
+		plane.firstMaterial?.diffuse.contents = UIImage(named: "student")
 
-        // MARK: - ARSCNViewDelegate
-        func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-            guard let imageAnchor = anchor as? ARImageAnchor else { return }
+		let planeNode = SCNNode(geometry: plane)
+		planeNode.eulerAngles.x = -.pi / 2
 
-            // Create a plane to visualize the image
-            let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width,
-                                 height: imageAnchor.referenceImage.physicalSize.height)
-            
-            // 任意の画像を設定 (例: "display_image.png")
-            plane.firstMaterial?.diffuse.contents = UIImage(named: "student")
+		node.addChildNode(planeNode)
+		
+		if (!self.isDetected)
+		{
+			DispatchQueue.main.async
+			{
+				Timer.scheduledTimer(timeInterval: 10,
+									 target: self,
+									 selector: #selector(ARViewController.timerAction(timer:)),
+									 userInfo: nil,
+									 repeats: false)
+			}
+		}
+		
+		self.isDetected = true
+	}
+	
+	@objc func timerAction(timer:Timer)
+	{
+		self.dismiss(animated: true)
 
-            // Create a node with the plane and rotate it
-            let planeNode = SCNNode(geometry: plane)
-            planeNode.eulerAngles.x = -.pi / 2
+		Timer.scheduledTimer(withTimeInterval: 5.0,
+							 repeats: false) { timer in
 
-            // Add the plane node to the scene
-            node.addChildNode(planeNode)
-        }
-    }
+			GameDirector.shared.sendFlagToServer(flagIndex: 0)
+			GameDirector.shared.changeScene(scene: ClearMemberCardScene())
+			
+		}
+	}
+}

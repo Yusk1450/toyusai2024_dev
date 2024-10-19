@@ -73,8 +73,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 		
 		self.boxViews = [self.downbox2, self.downbox1, self.leftbox, self.upbox]
 		
+		director.currentViewController = self
+		
 		Timer.scheduledTimer(withTimeInterval: 5.0, repeats: false) { timer in
-			GameDirector.shared.startGame()
+			director.startGame()
 		}
 	}
 	

@@ -7,6 +7,16 @@
 
 import UIKit
 
-class ClearGlassScene: NSObject {
-
+class ClearGlassScene: BaseScene
+{
+	override init()
+	{
+		super.init()
+		
+		self.scenario = [
+			"苦しい、頑張ってるのに全然終わらない",
+			"もう、間に合わないのかな",
+			"iPadをポスターに重ねたら、勝手に補完してくれれば良いのに…"
+		]
+	}
 }

@@ -18,16 +18,16 @@ class BaseScene: NSObject
 	
 	var delegate:GameSceneDelegate?
 	
-	func start()
+	func start(viewController:UIViewController?)
 	{
 		self.delegate?.gameSceneDidStart(scene: self)
 	}
 	
-	func update()
+	func update(viewController:UIViewController?)
 	{
 	}
 	
-	func stop()
+	func stop(viewController:UIViewController?)
 	{
 	}
 }

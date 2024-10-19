@@ -1,0 +1,42 @@
+{
+  "originHash" : "224de8e1bc9aae2c55a596ccac254dce357c6f7ce113ea5ed077aef95c3b59c3",
+  "pins" : [
+    {
+      "identity" : "cocoaasyncsocket",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/robbiehanson/CocoaAsyncSocket",
+      "state" : {
+        "revision" : "dbdc00669c1ced63b27c3c5f052ee4d28f10150c",
+        "version" : "7.6.5"
+      }
+    },
+    {
+      "identity" : "coreosc",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sammysmallman/CoreOSC.git",
+      "state" : {
+        "revision" : "20581ab989c36617ffee528d0e2b24b14141d31b",
+        "version" : "2.0.0"
+      }
+    },
+    {
+      "identity" : "osckit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SammySmallman/OSCKit",
+      "state" : {
+        "revision" : "85279d6703930b59d2e87a77636b26ed41c507f8",
+        "version" : "4.0.0"
+      }
+    },
+    {
+      "identity" : "swift-netutils",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/svdo/swift-netutils",
+      "state" : {
+        "revision" : "28eb6f86a84e34e97dd3bea7e9658da15e8a1767",
+        "version" : "4.2.1"
+      }
+    }
+  ],
+  "version" : 3
+}

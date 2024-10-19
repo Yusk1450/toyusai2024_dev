@@ -14,19 +14,21 @@ class MemberCardScene: BaseScene
 		super.init()
 		
 		self.scenario = [
-			"学生証をなくした、多分教室にあると思うんだけど"
+			"学生証なくした、多分教室にあると思うんだけど"
 		]
 	}
 	
-	override func start()
+	override func start(viewController:UIViewController?)
 	{
-		// AR起動
+		super.start(viewController: viewController)
 		
-		Timer.scheduledTimer(withTimeInterval: 10,
-							 repeats: false) { timer in
-			
-			GameDirector.shared.changeScene(scene: ClearMemberCardScene())
-			
+		if let vc = viewController
+		{
+			Timer.scheduledTimer(withTimeInterval: 8.0, repeats: false) { timer in
+				
+				vc.performSegue(withIdentifier: "toAR", sender: nil)
+				
+			}
 		}
 	}
 	

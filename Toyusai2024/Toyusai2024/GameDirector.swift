@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 protocol GameDirectorDelegate: AnyObject
 {
@@ -20,16 +21,27 @@ class GameDirector: NSObject, GameSceneDelegate
 	
 	var delegate:GameDirectorDelegate?
 	
-	
+	let ip = "192.168.0.115"
+//	let ip = "10.0.1.75"
+	var url:String!
 	
 	// 残り時間
 	var remainGameTime = 900
 	var gameTimer:Timer?
 
+	var currentViewController:UIViewController?
+	
 	// 現在のシーンクラス
 	var currentScene:BaseScene?
 	// ギミッククリアフラグ
-	let gimmickFlags = [false, false, false, false]
+	var gimmickFlags = [false, false, false, false]
+	
+	override init()
+	{
+		super.init()
+		
+		self.url = "http://\(self.ip):8888/WORKS/NBU/toyusai2024_dev/server"
+	}
 	
 	/* ----------------------------------------------------
 	 * ゲームを開始する
@@ -44,8 +56,9 @@ class GameDirector: NSObject, GameSceneDelegate
 											  repeats: true)
 		
 		self.currentScene = FirstScene()
+//		self.currentScene = ClearMemberCardScene()
 		self.currentScene?.delegate = self
-		self.currentScene?.start()
+		self.currentScene?.start(viewController: self.currentViewController)
 	}
 	
 	/* ----------------------------------------------------
@@ -58,7 +71,7 @@ class GameDirector: NSObject, GameSceneDelegate
 		// サーバのフラグを確認する
 		self.updateServerFlag()
 		
-		self.currentScene?.update()
+		self.currentScene?.update(viewController: self.currentViewController)
 		self.delegate?.gameDirectorDidUpdate(gameDirector: self)
 
 		// 時間切れ
@@ -68,14 +81,49 @@ class GameDirector: NSObject, GameSceneDelegate
 		}
 	}
 	
-	func sendFlagToServer()
+	func sendFlagToServer(flagIndex:Int)
 	{
-		
+		if let url = self.url
+		{
+			AF.request("\(url)/flag",
+					   method: .post,
+					   parameters: ["flag_id": flagIndex],
+					   encoding: URLEncoding.default,
+					   headers: nil
+			)
+				.responseJSON { res in
+			}
+		}
 	}
 	
 	func updateServerFlag()
 	{
-		
+		if let url = self.url
+		{
+			AF.request("\(url)/flag",
+					   method: .get,
+					   parameters: nil,
+					   encoding: URLEncoding.default,
+					   headers: nil
+			)
+				.responseJSON { res in
+				
+					print(res.data)
+					
+					if let data = res.data
+					{
+						let json = JSON(data)
+						
+						print(json)
+						
+						for i in stride(from: 0, to: self.gimmickFlags.count, by: 1)
+						{
+							self.gimmickFlags[i] = json[i].boolValue
+						}
+					}
+
+			}
+		}
 	}
 	
 	/* ----------------------------------------------------
@@ -91,12 +139,12 @@ class GameDirector: NSObject, GameSceneDelegate
 	 ----------------------------------------------------*/
 	func changeScene(scene:BaseScene)
 	{
-		self.currentScene?.stop()
+		self.currentScene?.stop(viewController: self.currentViewController)
 		self.currentScene?.delegate = nil
 		
 		self.currentScene = scene
 		self.currentScene?.delegate = self
-		self.currentScene?.start()
+		self.currentScene?.start(viewController: self.currentViewController)
 	}
 	
 	/* ----------------------------------------------------

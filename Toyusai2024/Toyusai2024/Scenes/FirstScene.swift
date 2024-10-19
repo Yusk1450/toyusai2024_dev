@@ -19,22 +19,22 @@ class FirstScene: BaseScene
 		]
 	}
 	
-	override func start()
+	override func start(viewController:UIViewController?)
 	{
-		self.delegate?.gameSceneDidStart(scene: self)
+		super.start(viewController: viewController)
 		
-		Timer.scheduledTimer(withTimeInterval: 10.0,
+		Timer.scheduledTimer(withTimeInterval: 6.0,
 							 repeats: false) { timer in
 			
 			GameDirector.shared.changeScene(scene: MemberCardScene())
 		}
 	}
 	
-	override func update()
+	override func update(viewController:UIViewController?)
 	{
 	}
 	
-	override func stop()
+	override func stop(viewController:UIViewController?)
 	{
 	}
 }

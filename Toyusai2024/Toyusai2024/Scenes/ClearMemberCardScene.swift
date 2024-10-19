@@ -16,12 +16,19 @@ class ClearMemberCardScene: BaseScene
 		self.scenario = [
 			"学生証、やっぱり教室に落ちてた",
 			"廊下で皆の話が聞こえたけど、もしかして展示会にあんまり乗り気じゃないのかな",
-			"いろんな人に知ってほしいし、WEBサイトも作らないと"
+			"はやく、展示するゲームも完成させないと"
 		]
 	}
 	
-	override func update()
+	override func update(viewController: UIViewController?)
 	{
+		let director = GameDirector.shared
 		
+		// ゲームクリアフラグを確認する
+		if (director.gimmickFlags[1])
+		{
+			director.changeScene(scene: ClearBuggyGameScene())
+		}
 	}
+	
 }
