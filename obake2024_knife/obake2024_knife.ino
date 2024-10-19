@@ -13,7 +13,7 @@ Adafruit_MPU6050 mpu;
 void setup()
 {
   Serial.begin(9600);
-  while (!Serial);
+  // while (!Serial);
   delay(10);
 
   if (!mpu.begin()) {
@@ -44,7 +44,7 @@ void loop()
   double z = a.acceleration.z;
   
   double accel = sqrt(x * x + y * y + z * z);
-  Serial.println(accel);
+  // Serial.println(accel);
 
   if (accel > 30)
   {
