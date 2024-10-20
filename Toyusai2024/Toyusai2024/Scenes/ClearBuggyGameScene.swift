@@ -15,7 +15,7 @@ class ClearBuggyGameScene: BaseScene
 		super.init()
 		
 		self.scenario = [
-			"まだできない、どれだけ頑張ってもバグが出てくる"
+			"おかしいな、直しても直してもバグが出てくる"
 		]
 	}
 	
@@ -23,14 +23,29 @@ class ClearBuggyGameScene: BaseScene
 	{
 		super.start(viewController: viewController)
 		
-		let client = OSCUdpClient(host: "192.168.0.115", port: 55555)
-		if let message = try? OSCMessage(with: "/start_movie", arguments: [])
+		var client = OSCUdpClient(host: "192.168.0.201", port: 55555)
+		if let message = try? OSCMessage(with: "/light_off", arguments: [])
 		{
 			if let _ = try? client.send(message)
 			{
 			}
 		}
 		
+		client = OSCUdpClient(host: "192.168.0.205", port: 55555)
+		if let message = try? OSCMessage(with: "/light_on", arguments: [])
+		{
+			if let _ = try? client.send(message)
+			{
+			}
+		}
+		
+		client = OSCUdpClient(host: "192.168.0.115", port: 55555)
+		if let message = try? OSCMessage(with: "/start_movie", arguments: [])
+		{
+			if let _ = try? client.send(message)
+			{
+			}
+		}
 		
 		Timer.scheduledTimer(withTimeInterval: 25.0, repeats: false) { timer in
 			

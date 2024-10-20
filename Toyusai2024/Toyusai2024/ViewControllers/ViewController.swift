@@ -59,14 +59,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 		//背景カラー
 		view.backgroundColor = UIColor(red: 45/255, green: 45/255, blue: 49/255, alpha: 1.0)
 		
-		// キーボード表示
-		NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-		NotificationCenter.default.addObserver(self,selector: #selector(keyboardWillShowNotification),name: UIResponder.keyboardWillShowNotification,object: nil)
-		
-		// キーボード非表示
-		NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-		NotificationCenter.default.addObserver(self,selector: #selector(keyboardWillHideNotification),name: UIResponder.keyboardWillHideNotification,object: nil)
-		
 		let path = Bundle.main.path(forResource: "sound", ofType: "mp3")
 		let url = URL(fileURLWithPath: path!)
 		self.audioPlayer = try? AVAudioPlayer(contentsOf: url)
@@ -180,27 +172,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 		self.labelW.text = formattedTime
 		self.labelR.text = formattedTime
 		self.labelB.text = formattedTime
-	}
-	
-	@objc func keyboardWillShowNotification(notification:NSNotification)
-	{
-		guard let userInfo = notification.userInfo else { return }
-		guard let isLocalUserInfoKey = userInfo[UIResponder.keyboardIsLocalUserInfoKey] as? NSNumber else { return }
-		
-		if (!isLocalUserInfoKey.boolValue) { return }
-		
-		let transform = CGAffineTransform(translationX: 0, y: -200)
-		self.view.transform = transform
-	}
-	
-	@objc func keyboardWillHideNotification(notification:NSNotification)
-	{
-		guard let userInfo = notification.userInfo else { return }
-		guard let isLocalUserInfoKey = userInfo[UIResponder.keyboardIsLocalUserInfoKey] as? NSNumber else { return }
-		
-		if (!isLocalUserInfoKey.boolValue) { return }
-		
-		self.view.transform = CGAffineTransform.identity
 	}
 	
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool

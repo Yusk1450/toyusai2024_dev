@@ -18,8 +18,16 @@
 		D61798492CC0E38B00A5EE17 /* ClearMemberCardScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61798482CC0E38B00A5EE17 /* ClearMemberCardScene.swift */; };
 		D617984B2CC0E47000A5EE17 /* ClearBuggyGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D617984A2CC0E47000A5EE17 /* ClearBuggyGameScene.swift */; };
 		D617984D2CC0F7F300A5EE17 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D617984C2CC0F7F300A5EE17 /* FirstViewController.swift */; };
+		D69BF6C92CC42831008B5CB2 /* NormalEndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69BF6C82CC42831008B5CB2 /* NormalEndViewController.swift */; };
+		D69BF6CB2CC42AF8008B5CB2 /* TrueEndMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69BF6CA2CC42AF8008B5CB2 /* TrueEndMessageViewController.swift */; };
+		D69BF6CD2CC4520B008B5CB2 /* BadEndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69BF6CC2CC4520B008B5CB2 /* BadEndViewController.swift */; };
 		D6B545F52CC36FCE00ACDFAD /* ClearGlassScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B545F42CC36FCE00ACDFAD /* ClearGlassScene.swift */; };
 		D6B545FB2CC3B11000ACDFAD /* OSCKit in Frameworks */ = {isa = PBXBuildFile; productRef = D6B545FA2CC3B11000ACDFAD /* OSCKit */; };
+		D6B545FE2CC404B500ACDFAD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B545FD2CC404B500ACDFAD /* BaseViewController.swift */; };
+		D6B546012CC40D2300ACDFAD /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B546002CC40D2300ACDFAD /* MessageViewController.swift */; };
+		D6B546032CC4134A00ACDFAD /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B546022CC4134A00ACDFAD /* InputViewController.swift */; };
+		D6B546052CC41A5500ACDFAD /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B546042CC41A5500ACDFAD /* ConfirmViewController.swift */; };
+		D6B546072CC41FB300ACDFAD /* NormalEndMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B546062CC41FB300ACDFAD /* NormalEndMessageViewController.swift */; };
 		E6E670312CB4E57E004A8E9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E670302CB4E57E004A8E9C /* AppDelegate.swift */; };
 		E6E670332CB4E57E004A8E9C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E670322CB4E57E004A8E9C /* SceneDelegate.swift */; };
 		E6E670352CB4E57E004A8E9C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E670342CB4E57E004A8E9C /* ViewController.swift */; };
@@ -62,7 +70,15 @@
 		D61798482CC0E38B00A5EE17 /* ClearMemberCardScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearMemberCardScene.swift; sourceTree = "<group>"; };
 		D617984A2CC0E47000A5EE17 /* ClearBuggyGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearBuggyGameScene.swift; sourceTree = "<group>"; };
 		D617984C2CC0F7F300A5EE17 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		D69BF6C82CC42831008B5CB2 /* NormalEndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalEndViewController.swift; sourceTree = "<group>"; };
+		D69BF6CA2CC42AF8008B5CB2 /* TrueEndMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrueEndMessageViewController.swift; sourceTree = "<group>"; };
+		D69BF6CC2CC4520B008B5CB2 /* BadEndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadEndViewController.swift; sourceTree = "<group>"; };
 		D6B545F42CC36FCE00ACDFAD /* ClearGlassScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearGlassScene.swift; sourceTree = "<group>"; };
+		D6B545FD2CC404B500ACDFAD /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		D6B546002CC40D2300ACDFAD /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		D6B546022CC4134A00ACDFAD /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
+		D6B546042CC41A5500ACDFAD /* ConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
+		D6B546062CC41FB300ACDFAD /* NormalEndMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalEndMessageViewController.swift; sourceTree = "<group>"; };
 		E6E6702D2CB4E57E004A8E9C /* Toyusai2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Toyusai2024.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6E670302CB4E57E004A8E9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6E670322CB4E57E004A8E9C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +161,24 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		D6B545FF2CC40C5000ACDFAD /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D617984C2CC0F7F300A5EE17 /* FirstViewController.swift */,
+				CE3E61812CC20E450025AEF2 /* ARViewController.swift */,
+				D6B545FD2CC404B500ACDFAD /* BaseViewController.swift */,
+				E6E670342CB4E57E004A8E9C /* ViewController.swift */,
+				D6B546002CC40D2300ACDFAD /* MessageViewController.swift */,
+				D6B546022CC4134A00ACDFAD /* InputViewController.swift */,
+				D6B546042CC41A5500ACDFAD /* ConfirmViewController.swift */,
+				D6B546062CC41FB300ACDFAD /* NormalEndMessageViewController.swift */,
+				D69BF6C82CC42831008B5CB2 /* NormalEndViewController.swift */,
+				D69BF6CA2CC42AF8008B5CB2 /* TrueEndMessageViewController.swift */,
+				D69BF6CC2CC4520B008B5CB2 /* BadEndViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		E6E670242CB4E57E004A8E9C = {
 			isa = PBXGroup;
 			children = (
@@ -176,9 +210,7 @@
 				D61798442CC0C00600A5EE17 /* sound.mp3 */,
 				E6E670302CB4E57E004A8E9C /* AppDelegate.swift */,
 				E6E670322CB4E57E004A8E9C /* SceneDelegate.swift */,
-				D617984C2CC0F7F300A5EE17 /* FirstViewController.swift */,
-				CE3E61812CC20E450025AEF2 /* ARViewController.swift */,
-				E6E670342CB4E57E004A8E9C /* ViewController.swift */,
+				D6B545FF2CC40C5000ACDFAD /* ViewControllers */,
 				D60AFFAB2CBFFE8200B57D09 /* GameDirector.swift */,
 				E6E670362CB4E57E004A8E9C /* Main.storyboard */,
 				E6E670392CB4E57F004A8E9C /* Assets.xcassets */,
@@ -388,16 +420,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D69BF6C92CC42831008B5CB2 /* NormalEndViewController.swift in Sources */,
 				D61798472CC0E13200A5EE17 /* MemberCardScene.swift in Sources */,
 				D61798432CC0B9EE00A5EE17 /* UIColorEx.swift in Sources */,
 				E6E670352CB4E57E004A8E9C /* ViewController.swift in Sources */,
+				D6B546032CC4134A00ACDFAD /* InputViewController.swift in Sources */,
+				D69BF6CD2CC4520B008B5CB2 /* BadEndViewController.swift in Sources */,
+				D6B546052CC41A5500ACDFAD /* ConfirmViewController.swift in Sources */,
 				CE3E61822CC20E450025AEF2 /* ARViewController.swift in Sources */,
+				D6B546012CC40D2300ACDFAD /* MessageViewController.swift in Sources */,
+				D6B546072CC41FB300ACDFAD /* NormalEndMessageViewController.swift in Sources */,
 				D60AFFB12CC013B600B57D09 /* FirstScene.swift in Sources */,
+				D6B545FE2CC404B500ACDFAD /* BaseViewController.swift in Sources */,
 				D60AFFAC2CBFFE8200B57D09 /* GameDirector.swift in Sources */,
 				E6E670312CB4E57E004A8E9C /* AppDelegate.swift in Sources */,
 				E6E670332CB4E57E004A8E9C /* SceneDelegate.swift in Sources */,
 				D6B545F52CC36FCE00ACDFAD /* ClearGlassScene.swift in Sources */,
 				D617984B2CC0E47000A5EE17 /* ClearBuggyGameScene.swift in Sources */,
+				D69BF6CB2CC42AF8008B5CB2 /* TrueEndMessageViewController.swift in Sources */,
 				D60AFFAF2CC012EC00B57D09 /* BaseScene.swift in Sources */,
 				D61798492CC0E38B00A5EE17 /* ClearMemberCardScene.swift in Sources */,
 				D617984D2CC0F7F300A5EE17 /* FirstViewController.swift in Sources */,

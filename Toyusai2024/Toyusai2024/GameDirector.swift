@@ -49,6 +49,8 @@ class GameDirector: NSObject, GameSceneDelegate
 	func startGame()
 	{
 		self.remainGameTime = 900
+//		self.remainGameTime = 20
+
 		self.gameTimer = Timer.scheduledTimer(timeInterval: 1.0,
 											  target: self,
 											  selector: #selector(GameDirector.updateGameStatus(timer:)),
@@ -56,7 +58,7 @@ class GameDirector: NSObject, GameSceneDelegate
 											  repeats: true)
 		
 		self.currentScene = FirstScene()
-//		self.currentScene = ClearMemberCardScene()
+//		self.currentScene = ClearGlassScene()
 		self.currentScene?.delegate = self
 		self.currentScene?.start(viewController: self.currentViewController)
 	}
@@ -68,18 +70,20 @@ class GameDirector: NSObject, GameSceneDelegate
 	{
 		self.remainGameTime -= 1
 				
+		// 時間切れ
+		if (self.remainGameTime < 0)
+		{
+			self.gameTimer?.invalidate()
+		}
+		
 		// サーバのフラグを確認する
 		self.updateServerFlag()
 		
 		self.currentScene?.update(viewController: self.currentViewController)
 		self.delegate?.gameDirectorDidUpdate(gameDirector: self)
-
-		// 時間切れ
-		if (self.remainGameTime <= 0)
-		{
-			self.gameTimer?.invalidate()
-		}
 	}
+	
+	
 	
 	func sendFlagToServer(flagIndex:Int)
 	{

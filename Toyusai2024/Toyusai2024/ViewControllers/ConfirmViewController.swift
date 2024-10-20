@@ -7,23 +7,45 @@
 
 import UIKit
 
-class ConfirmViewController: UIViewController {
+class ConfirmViewController: UIViewController
+{
+	@IBOutlet weak var textField: UITextField!
+	
+	
+	var message:String?
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    override func viewDidLoad()
+	{
+		super.viewDidLoad()
+		
+		self.textField.text = self.message
+	}
+	
+	@IBAction func okBtnAction(_ sender: Any)
+	{
+		// 楽しかった
+		if (message?.trimmingCharacters(in: .whitespacesAndNewlines) == "楽しかった")
+		{
+			self.performSegue(withIdentifier: "toFun", sender: nil)
+		}
+		// 感動した
+		else if (message?.trimmingCharacters(in: .whitespacesAndNewlines) == "感動した")
+		{
+//			self.performSegue(withIdentifier: "toTrue", sender: nil)
+			self.performSegue(withIdentifier: "toFun", sender: nil)
+		}
+		// その他
+		else
+		{
+			self.performSegue(withIdentifier: "toBad", sender: nil)
+		}
+		
+	}
+	
+	@IBAction func returnBtnAction(_ sender: Any)
+	{
+		self.dismiss(animated: true)
+	}
+	
+	
 }
