@@ -18,6 +18,7 @@
 		D61798492CC0E38B00A5EE17 /* ClearMemberCardScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61798482CC0E38B00A5EE17 /* ClearMemberCardScene.swift */; };
 		D617984B2CC0E47000A5EE17 /* ClearBuggyGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D617984A2CC0E47000A5EE17 /* ClearBuggyGameScene.swift */; };
 		D617984D2CC0F7F300A5EE17 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D617984C2CC0F7F300A5EE17 /* FirstViewController.swift */; };
+		D6393BF82CC48A0300F961FB /* NormalEnd2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6393BF72CC48A0300F961FB /* NormalEnd2ViewController.swift */; };
 		D69BF6C92CC42831008B5CB2 /* NormalEndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69BF6C82CC42831008B5CB2 /* NormalEndViewController.swift */; };
 		D69BF6CB2CC42AF8008B5CB2 /* TrueEndMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69BF6CA2CC42AF8008B5CB2 /* TrueEndMessageViewController.swift */; };
 		D69BF6CD2CC4520B008B5CB2 /* BadEndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69BF6CC2CC4520B008B5CB2 /* BadEndViewController.swift */; };
@@ -70,6 +71,7 @@
 		D61798482CC0E38B00A5EE17 /* ClearMemberCardScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearMemberCardScene.swift; sourceTree = "<group>"; };
 		D617984A2CC0E47000A5EE17 /* ClearBuggyGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearBuggyGameScene.swift; sourceTree = "<group>"; };
 		D617984C2CC0F7F300A5EE17 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		D6393BF72CC48A0300F961FB /* NormalEnd2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalEnd2ViewController.swift; sourceTree = "<group>"; };
 		D69BF6C82CC42831008B5CB2 /* NormalEndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalEndViewController.swift; sourceTree = "<group>"; };
 		D69BF6CA2CC42AF8008B5CB2 /* TrueEndMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrueEndMessageViewController.swift; sourceTree = "<group>"; };
 		D69BF6CC2CC4520B008B5CB2 /* BadEndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadEndViewController.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				D6B546042CC41A5500ACDFAD /* ConfirmViewController.swift */,
 				D6B546062CC41FB300ACDFAD /* NormalEndMessageViewController.swift */,
 				D69BF6C82CC42831008B5CB2 /* NormalEndViewController.swift */,
+				D6393BF72CC48A0300F961FB /* NormalEnd2ViewController.swift */,
 				D69BF6CA2CC42AF8008B5CB2 /* TrueEndMessageViewController.swift */,
 				D69BF6CC2CC4520B008B5CB2 /* BadEndViewController.swift */,
 			);
@@ -430,6 +433,7 @@
 				CE3E61822CC20E450025AEF2 /* ARViewController.swift in Sources */,
 				D6B546012CC40D2300ACDFAD /* MessageViewController.swift in Sources */,
 				D6B546072CC41FB300ACDFAD /* NormalEndMessageViewController.swift in Sources */,
+				D6393BF82CC48A0300F961FB /* NormalEnd2ViewController.swift in Sources */,
 				D60AFFB12CC013B600B57D09 /* FirstScene.swift in Sources */,
 				D6B545FE2CC404B500ACDFAD /* BaseViewController.swift in Sources */,
 				D60AFFAC2CBFFE8200B57D09 /* GameDirector.swift in Sources */,

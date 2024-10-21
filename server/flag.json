@@ -12,11 +12,11 @@
     {
         "comment": "すりガラス越しの主幹",
         "name": "through_frosted_glass",
-        "clear": false
+        "clear": true
     },
     {
         "comment": "未完成なポスター",
         "name": "unfinished_poster",
-        "clear": false
+        "clear": true
     }
 ]

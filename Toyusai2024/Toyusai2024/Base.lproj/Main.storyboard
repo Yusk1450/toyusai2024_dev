@@ -769,10 +769,10 @@ Cg
             </objects>
             <point key="canvasLocation" x="1523.8888888888889" y="3642.9629629629626"/>
         </scene>
-        <!--View Controller-->
+        <!--Normal End2 View Controller-->
         <scene sceneID="HJn-qV-Dcg">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="nji-sd-eLo" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="nji-sd-eLo" customClass="NormalEnd2ViewController" customModule="Toyusai2024" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u07-as-65A">
                         <rect key="frame" x="0.0" y="0.0" width="1080" height="810"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -804,10 +804,13 @@ Cg
                         <viewLayoutGuide key="safeArea" id="ovO-6D-uN5"/>
                         <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <connections>
+                        <segue destination="XT7-U0-ujC" kind="presentation" identifier="toEnd" id="9pu-bV-z3V"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pJs-BF-GOt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1524" y="4361"/>
+            <point key="canvasLocation" x="1524" y="4391"/>
         </scene>
         <!--True End Message View Controller-->
         <scene sceneID="cwG-6p-kZm">
@@ -986,7 +989,7 @@ Cg
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="XXx-Ro-JBg"/>
+        <segue reference="9pu-bV-z3V"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="button" width="45" height="45"/>

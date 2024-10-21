@@ -8,6 +8,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import OSCKit
 
 protocol GameDirectorDelegate: AnyObject
 {
@@ -26,7 +27,7 @@ class GameDirector: NSObject, GameSceneDelegate
 	var url:String!
 	
 	// 残り時間
-	var remainGameTime = 900
+	var remainGameTime = 600
 	var gameTimer:Timer?
 
 	var currentViewController:UIViewController?
@@ -48,9 +49,33 @@ class GameDirector: NSObject, GameSceneDelegate
 	-----------------------------------------------------*/
 	func startGame()
 	{
-		self.remainGameTime = 900
+		self.remainGameTime = 600
 //		self.remainGameTime = 20
 
+		var client = OSCUdpClient(host: "192.168.0.200", port: 55555)
+		if let message = try? OSCMessage(with: "/light_off", arguments: [])
+		{
+			if let _ = try? client.send(message)
+			{
+			}
+		}
+		
+		client = OSCUdpClient(host: "192.168.0.201", port: 55555)
+		if let message = try? OSCMessage(with: "/light_off", arguments: [])
+		{
+			if let _ = try? client.send(message)
+			{
+			}
+		}
+		
+		client = OSCUdpClient(host: "192.168.0.205", port: 55555)
+		if let message = try? OSCMessage(with: "/light_off", arguments: [])
+		{
+			if let _ = try? client.send(message)
+			{
+			}
+		}
+		
 		self.gameTimer = Timer.scheduledTimer(timeInterval: 1.0,
 											  target: self,
 											  selector: #selector(GameDirector.updateGameStatus(timer:)),

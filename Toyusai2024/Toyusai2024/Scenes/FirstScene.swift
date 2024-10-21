@@ -22,7 +22,7 @@ class FirstScene: BaseScene
 	override func start(viewController:UIViewController?)
 	{
 		super.start(viewController: viewController)
-		
+				
 		Timer.scheduledTimer(withTimeInterval: 6.0,
 							 repeats: false) { timer in
 			

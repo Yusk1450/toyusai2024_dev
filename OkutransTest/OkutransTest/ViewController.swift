@@ -9,12 +9,15 @@ import UIKit
 import AVFoundation
 import CoreMotion
 import Alamofire
+import SwiftyJSON
 
 class ViewController: UIViewController, OkutransDetectorDelegate
 {
 	@IBOutlet weak var playerView: PlayerView!
 	
 	var isPlayed = false
+	
+	var timer:Timer?
 	
 	var detector = OkutransDetector()
 	
@@ -25,6 +28,7 @@ class ViewController: UIViewController, OkutransDetectorDelegate
 		self.detector.delegate = self
 		
 		self.playerView.player = AVPlayer(playerItem: self.getPlayerItem(fileName: "nbu_fes2024"))
+		self.playerView.isHidden = true
 		
 		NotificationCenter.default.addObserver(
 			forName: .AVPlayerItemDidPlayToEndTime,
@@ -45,6 +49,37 @@ class ViewController: UIViewController, OkutransDetectorDelegate
 					}
 				
 			}
+		
+		Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { timer in
+			
+			let ip = "192.168.0.115"
+			let url = "http://\(ip):8888/WORKS/NBU/toyusai2024_dev/server/flag"
+			
+			AF.request(url,
+					   method: .get,
+					   parameters: nil,
+					   encoding: URLEncoding.default,
+					   headers: nil
+			)
+				.responseJSON { res in
+				
+					print(res.data)
+					
+					if let data = res.data
+					{
+						let json = JSON(data)
+						
+						if (json[2].boolValue)
+						{
+							DispatchQueue.main.async {
+								self.playerView.isHidden = false
+							}
+						}
+					}
+
+			}
+			
+		}
 	}
 	
 	override func viewDidAppear(_ animated: Bool)

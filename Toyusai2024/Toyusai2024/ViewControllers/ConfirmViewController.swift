@@ -23,13 +23,15 @@ class ConfirmViewController: UIViewController
 	
 	@IBAction func okBtnAction(_ sender: Any)
 	{
+		guard let message = self.message else { return }
+		
 		// 楽しかった
-		if (message?.trimmingCharacters(in: .whitespacesAndNewlines) == "楽しかった")
+		if (message.trimmingCharacters(in: .whitespacesAndNewlines).contains("楽"))
 		{
 			self.performSegue(withIdentifier: "toFun", sender: nil)
 		}
 		// 感動した
-		else if (message?.trimmingCharacters(in: .whitespacesAndNewlines) == "感動した")
+		else if (message.trimmingCharacters(in: .whitespacesAndNewlines).contains("感動"))
 		{
 //			self.performSegue(withIdentifier: "toTrue", sender: nil)
 			self.performSegue(withIdentifier: "toFun", sender: nil)
